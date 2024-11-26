@@ -2014,7 +2014,7 @@ class DownloaderHelper(_PluginBase):
         # 处理BT/PT标签
         if "BT" not in torrent_tags and "PT" not in torrent_tags:
             is_private = self.__check_private_torrent_for_qbittorrent(qbittorrent=qbittorrent, hash_str=hash_str)
-            btpt_tag = "PT" if is_private else "BT"
+            btpt_tag = "" if is_private else "BT"
             add_tags.append(btpt_tag)
 
         # 处理站点标签
@@ -2356,7 +2356,7 @@ class DownloaderHelper(_PluginBase):
         # 处理BT/PT标签
         if "BT" not in torrent_tags and "PT" not in torrent_tags:
             is_private = self.__check_private_torrent_for_transmission(torrent=torrent)
-            btpt_tag = "PT" if is_private else "BT"
+            btpt_tag = "" if is_private else "BT"
             add_tags.append(btpt_tag)
 
         # 处理站点标签
